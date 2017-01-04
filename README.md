@@ -18,6 +18,7 @@ You can configure this plugin in your root `_config.yml`.
 search:
   path: search.xml
   field: post
+  plainTxt: true
 ```
 
 - **path** - file path. Default is `search.xml` .
@@ -25,3 +26,4 @@ search:
   * **post** (Default) - will only covers all the posts of your blog.
   * **page** - will only covers all the pages of your blog.
   * **all** - will covers all the posts and pages of your blog.
+- **plainTxt** - generation plain text option.

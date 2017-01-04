@@ -5,8 +5,12 @@
     <% posts.each(function(post){ %>
     <entry>
       <title><%-: post.title | cdata %></title>
-      <url><%- encodeURI(post.permalink).replace("&","&amp;") %></url>
-      <content type="html"><%-: post.content | cdata %></content>
+      <url><%- config.root -%><%- encodeURI(post.path).replace("&","&amp;") %></url>
+      <% if (post.hgs_plainTxt){ %>
+        <content type="html"><%= post.hgs_plainTxt %></content>
+      <% }else{ %>
+        <content type="html"><%-: post.content | cdata %></content>
+      <% } %>
     </entry>
     <% }) %>
   <% } %>
@@ -14,8 +18,12 @@
     <% pages.each(function(page){ %>
     <entry>
       <title><%-: page.title | cdata %></title>
-      <url><%- encodeURI(page.permalink).replace("&","&amp;") %></url>
-      <content type="html"><%-: page.content | cdata %></content>
+      <url><%- config.root -%><%- encodeURI(page.path).replace("&","&amp;") %></url>
+      <% if (page.hgs_plainTxt){ %>
+        <content type="html"><%= page.hgs_plainTxt %></content>
+      <% }else{ %>
+        <content type="html"><%-: page.content | cdata %></content>
+      <% } %>
     </entry>
     <% }) %>
   <% } %>

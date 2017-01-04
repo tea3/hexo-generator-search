@@ -17,3 +17,4 @@ if (!pathFn.extname(config.path)){
 }
 
 hexo.extend.generator.register('search', require('./lib/generator'));
+hexo.extend.filter.register('after_post_render', require('./lib/collector') );
